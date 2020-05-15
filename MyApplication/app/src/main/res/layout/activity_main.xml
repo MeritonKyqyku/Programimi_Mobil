@@ -71,13 +71,15 @@
             android:textColor="@android:color/white"
             android:background="@color/color2"
             android:layout_marginTop="30dp"/>
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
-            android:textColor="@android:color/white"
+            android:layout_marginTop="30dp"
             android:background="@color/color2"
-            android:layout_marginTop="30dp"/>
+            android:onClick="clickToRegister"
+            android:text="Register"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
     <ImageView
