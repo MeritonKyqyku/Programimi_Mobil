@@ -34,7 +34,7 @@
         android:layout_marginTop="40dp"
         android:gravity="center_horizontal">'
         <EditText
-            android:id="@+id/Signin_Name"
+            android:id="@+id/Signup_Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/app_logo"
@@ -49,10 +49,10 @@
             />
 
         <EditText
-            android:id="@+id/Signin_username"
+            android:id="@+id/Signup_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Signin_Name"
+            android:layout_below="@+id/Signup_Name"
             android:padding="18dp"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -62,10 +62,10 @@
             android:textColorHint="@color/colorPrimaryDark"
             />
         <EditText
-            android:id="@+id/Signin_emailaddress"
+            android:id="@+id/Signup_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Signin_username"
+            android:layout_below="@+id/Signup_username"
             android:padding="18dp"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -76,10 +76,10 @@
             />
 
         <EditText
-            android:id="@+id/Signin_password"
+            android:id="@+id/Signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Signin_emailaddress"
+            android:layout_below="@+id/Signup_email"
             android:padding="18dp"
             android:layout_marginTop="15dp"
             android:textSize="18sp"
@@ -93,7 +93,7 @@
             android:id="@+id/Retypepassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/Signin_password"
+            android:layout_below="@+id/Signup_password"
             android:padding="18dp"
             android:layout_marginTop="15dp"
             android:textSize="18sp"
