@@ -32,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
     DatabaseReference reff1,reff2,reff3,reff4;
     User user;
     long MaxId=0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+    }
     public void clickToRegister(View view) {
         setContentView(R.layout.activity_registration);
         Signup_name = (EditText) findViewById(R.id.Signup_Name);
@@ -76,9 +83,7 @@ public class MainActivity extends AppCompatActivity {
                                 reff.setValue(user);
                                 Toast.makeText(getApplicationContext(), "User inserted", Toast.LENGTH_LONG).show();
                             }
-//                            else if(!(dataSnapshot123.exists())){
-//                                Toast.makeText(getApplicationContext(),"User exists",Toast.LENGTH_LONG).show();
-//                            }
+//
                         }
 
 
@@ -110,15 +115,23 @@ public class MainActivity extends AppCompatActivity {
                 if ((dataSnapshot.exists())) {
                    // Toast.makeText(getApplicationContext(),"qetu",Toast.LENGTH_LONG).show();
                     try {
-                        reff1 = reff.child(passi);
-                        reff2 = reff.child(passi);
-                        if(reff1.toString().equals(reff2)) {
-                            setContentView(R.layout.feed);
-                            Toast.makeText(getApplicationContext(), "Miresevini" + Useri, Toast.LENGTH_LONG).show();
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(),reff1.toString()+"    "+reff2.toString(),Toast.LENGTH_SHORT).show();
-                        }
+                       reff3=FirebaseDatabase.getInstance().getReference("User").child(passi);
+                       reff3.addValueEventListener(new ValueEventListener() {
+                           @Override
+                           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                               if(dataSnapshot.exists()){
+                                   setContentView(R.layout.feed);
+                                   Toast.makeText(getApplicationContext(), "Miresevini" + Useri, Toast.LENGTH_LONG).show();
+                               }
+
+                           }
+
+                           @Override
+                           public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                           }
+                       });
+
                     } catch (Exception e) {
                         Toast.makeText(getApplicationContext(), "e.toString()", Toast.LENGTH_LONG).show();
                     }
@@ -137,16 +150,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
-    }
-
-
 
 }
