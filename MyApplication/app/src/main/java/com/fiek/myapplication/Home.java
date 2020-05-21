@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class Home extends MainActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     ImageView navigationIcon;
 

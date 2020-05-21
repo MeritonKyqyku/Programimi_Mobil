@@ -101,6 +101,10 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+    public void getHome(){
+        Intent intent = new Intent(this,Home.class);
+        startActivity(intent);
+    }
     public void clickToLogin(View view) {
         Lusername = (EditText) findViewById(R.id.Login_username);
         final String Useri = Lusername.getText().toString().trim();
@@ -120,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                            @Override
                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                if(dataSnapshot.exists()){
-                                   setContentView(R.layout.feed);
+                                   getHome();
                                    Toast.makeText(getApplicationContext(), "Miresevini" + Useri, Toast.LENGTH_LONG).show();
                                }
 
@@ -147,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
 
 
     }
