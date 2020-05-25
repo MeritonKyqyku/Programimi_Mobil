@@ -115,18 +115,12 @@ public class MainActivity extends AppCompatActivity {
                        String message = (String) messageSnapshot.child("password").getValue();
                        if (Useri.equals(UsernameE)){
                            if (passi.equals(message)){
-
                                getHome();
-                         //      Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
                            }
                            else if (!passi.equals(message)){
-                               Toast.makeText(getApplicationContext(),"passi gabim",Toast.LENGTH_SHORT).show();
+                               Toast.makeText(getApplicationContext(),"Username or password is wrong",Toast.LENGTH_SHORT).show();
                            }
                        }
-//                       else if (!Useri.equals(UsernameE)){
-//                           Toast.makeText(getApplicationContext(),"Useri nuk egziston",Toast.LENGTH_SHORT).show();
-//                       }
-
                     }
                 }
             }
