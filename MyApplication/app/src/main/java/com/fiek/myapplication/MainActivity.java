@@ -104,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         final String passi = Lpassword.getText().toString().trim();
         Login = (Button) findViewById(R.id.btnLogin);
         reff2 = FirebaseDatabase.getInstance().getReference("User");
-     //   Toast.makeText(getApplicationContext(),"qetu",Toast.LENGTH_SHORT).show();
         reff2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
