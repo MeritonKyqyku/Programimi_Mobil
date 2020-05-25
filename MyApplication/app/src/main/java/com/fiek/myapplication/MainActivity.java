@@ -103,37 +103,31 @@ public class MainActivity extends AppCompatActivity {
         Lpassword = (EditText) findViewById(R.id.login_password);
         final String passi = Lpassword.getText().toString().trim();
         Login = (Button) findViewById(R.id.btnLogin);
-        reff2 = FirebaseDatabase.getInstance().getReference("User").child(Useri);
+        reff2 = FirebaseDatabase.getInstance().getReference("User");
      //   Toast.makeText(getApplicationContext(),"qetu",Toast.LENGTH_SHORT).show();
         reff2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if ((dataSnapshot.exists())) {
-                   // Toast.makeText(getApplicationContext(),"qetu",Toast.LENGTH_LONG).show();
-                    try {
-                       reff3=FirebaseDatabase.getInstance().getReference("User").child(passi);
-                       reff3.addValueEventListener(new ValueEventListener() {
-                           @Override
-                           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                               if(dataSnapshot.exists()){
-                                   getHome();
-                                   Toast.makeText(getApplicationContext(), "Miresevini" + Useri, Toast.LENGTH_LONG).show();
-                               }
+                    // Toast.makeText(getApplicationContext(),"qetu",Toast.LENGTH_LONG).show()
+                    for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
+                       String UsernameE=(String) messageSnapshot.child("username").getValue();
+                       String message = (String) messageSnapshot.child("password").getValue();
+                       if (Useri.equals(UsernameE)){
+                           if (passi.equals(message)){
 
+                               getHome();
+                         //      Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
                            }
-
-                           @Override
-                           public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                           else if (!passi.equals(message)){
+                               Toast.makeText(getApplicationContext(),"passi gabim",Toast.LENGTH_SHORT).show();
                            }
-                       });
+                       }
+//                       else if (!Useri.equals(UsernameE)){
+//                           Toast.makeText(getApplicationContext(),"Useri nuk egziston",Toast.LENGTH_SHORT).show();
+//                       }
 
-                    } catch (Exception e) {
-                        Toast.makeText(getApplicationContext(), "e.toString()", Toast.LENGTH_LONG).show();
                     }
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),"qetu gabimi",Toast.LENGTH_LONG).show();
                 }
             }
 
