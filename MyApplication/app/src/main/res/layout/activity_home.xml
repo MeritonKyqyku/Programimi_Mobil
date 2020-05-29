@@ -21,26 +21,47 @@
         android:orientation="horizontal"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="50dp">
 
         <ImageView
             android:id="@+id/menu_icon"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_menu"
-            android:tint="@android:color/white"/>
+            android:tint="@android:color/white" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
+            android:layout_weight=".9"
             android:text="Home"
-            android:paddingLeft="10dp"
+            android:textColor="@android:color/white"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/addImageView"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight=".15"
+
+            android:src="@drawable/addimage" />
+
 
     </LinearLayout>
 
+    <fragment
+        android:id="@+id/google_map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menutoolbar"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
