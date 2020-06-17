@@ -8,4 +8,13 @@
     <color name="color1">#005073</color>
     <color name="color2">#107DAC</color>
     <color name="color3">#189AD3</color>
+
+    <color name="colorC">#34829541</color>
+
+    <color name="box1">#FF80CBC4</color>
+    <color name="box2">#FFF8BBD0</color>
+    <color name="box3">#ffb0bec5</color>
+    <color name="box4">#FFEF9A9A</color>
+    <color name="box5">#FFDCE775</color>
+    <color name="box6">#FFFFAB91</color>
 </resources>

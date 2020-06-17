@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AllCategories">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
+        android:background="@color/colorC">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Categories"
+            android:textSize="30dp"
+            app:fontFamily="@font/wellfleet"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@color/colorC"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/texts1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20sp"
+                android:text="Restaurants"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/cutive" />
+
+            <ImageView
+                android:id="@+id/images1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/restaurantservice"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@color/colorC"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/texts2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20sp"
+                android:text="Banks"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                app:fontFamily="@font/cutive" />
+
+            <ImageView
+                android:id="@+id/images2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/bank1"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10sp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@color/colorC"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/texts3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20sp"
+                android:text="Education"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                app:fontFamily="@font/cutive" />
+
+            <ImageView
+                android:id="@+id/images3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/edu"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10sp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@color/colorC"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/texts4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20sp"
+                android:text="Pharmacies"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                app:fontFamily="@font/cutive" />
+
+            <ImageView
+                android:id="@+id/images4"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/pharmacies1"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10sp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@color/colorC"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/texts5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20sp"
+                android:text="Hotels"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                app:fontFamily="@font/cutive" />
+
+            <ImageView
+                android:id="@+id/images5"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/hotel"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10sp"/>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

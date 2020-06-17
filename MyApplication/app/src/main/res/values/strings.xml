@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">My Application</string>
+
+
+    <string name="categories">Categories</string>
+
+    <string name="home">Home</string>
+    <string name="cafe">Coffe Shop <br>Shadervan Prizren, 20000</br></string>
+    <string name="gatsby"> <br> Gatsby \n </br> <br>Cafe</br> </string>
+    <string name="gjimnazi">Gjimnazi <br>"Gjon Buzuku" </br></string>
+    <string name="gjimnazil">Lekë Matrënga <br>Prizren, 20000 </br> </string>
+    <string name="jara">Rruga e Jonit <br> Prizren, 20000 </br></string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

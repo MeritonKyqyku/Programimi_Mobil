@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.fiek.myapplication.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_categories"
+        android:name="com.fiek.myapplication.CategoriesFragment"
+        android:label="Categories"
+        tools:layout="@layout/fragment_categories" />
+    <fragment
+        android:id="@+id/nav_restaurants"
+        android:name="com.fiek.myapplication.RestaurantsFragment"
+        android:label="Restaurants"
+        tools:layout="@layout/fragment_restaurants" />
+    <fragment
+        android:id="@+id/nav_cafes"
+        android:name="com.fiek.myapplication.CafesFragment"
+        android:label="fragment_cafes"
+        tools:layout="@layout/fragment_cafes" />
+    <fragment
+        android:id="@+id/nav_banks"
+        android:name="com.fiek.myapplication.BanksFragment"
+        android:label="fragment_banks"
+        tools:layout="@layout/fragment_banks" />
+    <fragment
+        android:id="@+id/nav_education"
+        android:name="com.fiek.myapplication.EducationFragment"
+        android:label="fragment_education"
+        tools:layout="@layout/fragment_education" />
+    <fragment
+        android:id="@+id/nav_hotels"
+        android:name="com.fiek.myapplication.HotelsFragment"
+        android:label="fragment_hotels"
+        tools:layout="@layout/fragment_hotels" />
+    <fragment
+        android:id="@+id/nav_pharmacies"
+        android:name="com.fiek.myapplication.PharmaciesFragment"
+        android:label="fragment_pharmacies"
+        tools:layout="@layout/fragment_pharmacies" />
+    <fragment
+        android:id="@+id/nav_more"
+        android:name="com.fiek.myapplication.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" />
+</navigation>
