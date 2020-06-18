@@ -37,6 +37,11 @@ public class AllCategories extends AppCompatActivity {
         image.setAnimation(topAnimation);
         text.setAnimation(bottomAnimation);
 
+        image = findViewById(R.id.imagescafe);
+        text = findViewById(R.id.textcafe);
+        image.setAnimation(topAnimation);
+        text.setAnimation(bottomAnimation);
+
         image = findViewById(R.id.images2);
         text = findViewById(R.id.texts2);
         image.setAnimation(topAnimation);

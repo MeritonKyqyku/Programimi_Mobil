@@ -32,10 +32,8 @@ public class Home extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), AllCategories. class);
                         startActivity(intent);
-
                     }
                 });
-
             }
         });
 
@@ -46,7 +44,4 @@ public class Home extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
     }
-
-
-
 }
