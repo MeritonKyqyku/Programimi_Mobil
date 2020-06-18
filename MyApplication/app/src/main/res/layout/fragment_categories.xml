@@ -24,7 +24,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            android:background="@color/colorC"
+            android:background="@color/colorB"
             android:layout_margin="10dp">
 
             <TextView
@@ -50,7 +50,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            android:background="@color/colorC"
+            android:background="@color/colorB"
             android:layout_margin="10dp">
 
             <TextView
@@ -75,7 +75,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            android:background="@color/colorC"
+            android:background="@color/colorB"
             android:layout_margin="10dp">
 
             <TextView
@@ -100,7 +100,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            android:background="@color/colorC"
+            android:background="@color/colorB"
             android:layout_margin="10dp">
 
             <TextView
@@ -125,7 +125,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            android:background="@color/colorC"
+            android:background="@color/colorB"
             android:layout_margin="10dp">
 
             <TextView
