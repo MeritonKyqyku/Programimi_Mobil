@@ -1,6 +1,7 @@
 package com.fiek.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -20,14 +21,13 @@ public class AllCategories extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_categories);
 
-     // backbutton = findViewById(R.id.back_icon);
+      backbutton = findViewById(R.id.back_icon);
 
-     /* backbutton.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              AllCategories.super.onBackPressed();
-          }
-      });*/
+      backbutton.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            AllCategories.super.onBackPressed();
+                                        }});
 
         topAnimation= AnimationUtils.loadAnimation(this, R.anim.animation_top);
         bottomAnimation= AnimationUtils.loadAnimation(this, R.anim.animation_bottom);
