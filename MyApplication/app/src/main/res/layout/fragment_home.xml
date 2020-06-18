@@ -30,7 +30,7 @@
                     android:fontFamily="cursive"
                     android:layout_centerHorizontal="true"/>
 
-                <RelativeLayout
+              <!--  <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_below="@+id/app_name"
@@ -56,7 +56,7 @@
                         android:layout_centerVertical="true"
                         android:layout_marginRight="15dp"/>
                 </RelativeLayout>
-
+-->
             </RelativeLayout>
 
             <HorizontalScrollView
@@ -240,24 +240,11 @@
 
             </LinearLayout>
             </HorizontalScrollView>
-<!--<LinearLayout
-    android:id="@+id/text"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="">
-
-    </TextView>
-</LinearLayout>-->
             <LinearLayout
                 android:id="@+id/locations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 android:padding="20dp">
 
@@ -555,41 +542,24 @@
 
             </LinearLayout>
 
-           <!-- <LinearLayout
+            <LinearLayout
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="30dp"
-                android:padding="20dp">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:text="@string/prizren"
+                    android:textStyle="italic"
+                    android:fontFamily="monospace">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Categories"
-                        android:textSize="20dp"
-                        android:fontFamily="@font/wellfleet"
-                        android:textAllCaps="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="View all"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"/>
-
-                </RelativeLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"/>
-
-
-            </LinearLayout> -->
-
+                </TextView>
+            </LinearLayout>
         </LinearLayout>
 
 

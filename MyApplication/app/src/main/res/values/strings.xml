@@ -10,7 +10,10 @@
     <string name="gjimnazi">Gjimnazi <br>"Gjon Buzuku" </br></string>
     <string name="gjimnazil">Lekë Matrënga <br>Prizren, 20000 </br> </string>
     <string name="jara">Rruga e Jonit <br> Prizren, 20000 </br></string>
-
+    <string name="prizren"> Prizren is a city and municipality located in the Prizren District of Kosovo.
+        According to the 2011 census, the city of Prizren has 85,119 inhabitants, while the municipality has 177,781 inhabitants.
+        Prizren is a historic city located on the banks of the Prizren Bistrica river, and on the slopes of the Šar Mountains
+        in the southern part of Kosovo. The municipality has a border with Albania and North Macedonia. </string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

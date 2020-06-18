@@ -15,6 +15,8 @@ import androidx.fragment.app.Fragment;
  */
 public class HomeFragment extends Fragment {
 
+
+
 LinearLayout locations;
 
     public HomeFragment() {
@@ -31,11 +33,10 @@ LinearLayout locations;
         locations = v.findViewById(R.id.locations);
 
 
+
         return v;
 
-
     }
-
 
 
 }
