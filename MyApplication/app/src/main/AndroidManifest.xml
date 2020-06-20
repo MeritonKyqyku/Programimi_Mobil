@@ -24,7 +24,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".addImageView" />
+        <activity android:name=".addImageView" ></activity>
+
         <activity android:name=".RegistrationUser" />
         <activity android:name=".Home">
             <intent-filter>

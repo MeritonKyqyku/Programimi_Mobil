@@ -3,6 +3,13 @@
 
 
     <string name="categories">Categories</string>
+    <string-array name="category_arrays">
+        <item>Coffe shop</item>
+        <item>Banks</item>
+        <item>Education</item>
+        <item>Restaurants</item>
+        <item>Pharmacies</item>
+    </string-array>
 
     <string name="home">Home</string>
     <string name="cafe">Coffe Shop <br>Shadervan Prizren, 20000</br></string>
