@@ -82,11 +82,7 @@ public class addImageView extends Activity {
                 }
             }
         });
-        mTextViewShowUploads.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
+
     }
 
     // add items into spinner dynamically
@@ -108,7 +104,7 @@ public class addImageView extends Activity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
             mImageUri = data.getData();
-            Picasso.with(this).load(mImageUri).into(mImageView);
+            Picasso.get().load(mImageUri).into(mImageView);
         }
     }
     private String getFileExtension(Uri uri) {

@@ -22,9 +22,6 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         final DrawerLayout drawerLayout = findViewById(R.id.layout_of_drawer);
-
-
-
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setItemIconTintList(null);
 
@@ -49,19 +46,19 @@ public class Home extends AppCompatActivity {
 
                     }
                 });
-                findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), SearchActivity. class);
-                        startActivity(intent);
 
-                    }
-                });
 
 
             }
         });
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), addImageView. class);
+                startActivity(intent);
 
+            }
+        });
 
     }
 }
