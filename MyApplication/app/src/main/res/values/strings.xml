@@ -13,11 +13,12 @@
     </string-array>
 
     <string name="home">Home</string>
-    <string name="cafe">Coffe Shop <br>Shadervan Prizren, 20000</br></string>
-    <string name="gatsby"> <br> Gatsby \n </br> <br>Cafe</br> </string>
-    <string name="gjimnazi">Gjimnazi <br>"Gjon Buzuku" </br></string>
+    <string name="cafe"><br>Shadërvan\n</br><br>Prizren, 20000</br> </string>
+    <string name="marashi"><br>Vatrat Shqiptare 25\n</br><br>Prizren, 20000</br></string>
+    <string name="gatsby"><br>Gatsby\n</br><br>Cafe</br> </string>
+    <string name="gjimnazi"><br>Gjimnazi\n</br><br>Gjon Buzuku</br> </string>
     <string name="gjimnazil">Lekë Matrënga <br>Prizren, 20000 </br> </string>
-    <string name="jara">Rruga e Jonit <br> Prizren, 20000 </br></string>
+    <string name="jara"><br>Rruga e Jonit\n</br><br>Prizren, 20000</br> </string>
     <string name="prizren"> Prizren is a city and municipality located in the Prizren District of Kosovo.
         According to the 2011 census, the city of Prizren has 85,119 inhabitants, while the municipality has 177,781 inhabitants.
         Prizren is a historic city located on the banks of the Prizren Bistrica river, and on the slopes of the Šar Mountains
