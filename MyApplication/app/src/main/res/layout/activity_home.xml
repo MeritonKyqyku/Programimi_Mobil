@@ -40,13 +40,12 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_gravity="right"
-                android:layout_width="30sp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Button" />
+            <ImageView
+                android:id="@+id/addImageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="160dp"
+                android:src="@drawable/addimage" />
         </LinearLayout>
 
         <fragment
