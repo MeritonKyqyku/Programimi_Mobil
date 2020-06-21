@@ -7,20 +7,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+        <ImageView
+            android:id="@+id/image_view_upload"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
         <TextView
             android:id="@+id/text_view_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:text="Name"
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
-        <ImageView
-            android:id="@+id/image_view_upload"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:text="Restaurant Marashi"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/wellfleet"/>
+
+        <RatingBar
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:rating="3.5"
+            style="@style/Widget.AppCompat.RatingBar.Small"/>
+
+        <TextView
+            android:id="@+id/descript"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"
+            android:text="Vatrat Shqiptare 25, Prizren Kosovo"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

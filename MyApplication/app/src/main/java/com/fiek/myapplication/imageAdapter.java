@@ -2,6 +2,7 @@ package com.fiek.myapplication;
 
 import android.content.Context;
 
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,6 +36,9 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.ImageViewHol
     public void onBindViewHolder(ImageViewHolder holder, int position) {
         Upload uploadCurrent = mUploads.get(position);
         holder.textViewName.setText(uploadCurrent.getName());
+        holder.ratingview.setNumStars(uploadCurrent.getmRating());
+        holder.description.setText(uploadCurrent.getmDesc());
+
         Picasso.get().load(uploadCurrent.getImageUrl())
                 .placeholder(R.mipmap.ic_launcher)
                 .fit()
@@ -49,10 +54,14 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.ImageViewHol
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener {
         public TextView textViewName;
         public ImageView imageView;
+        public RatingBar ratingview;
+        public TextView description;
         public ImageViewHolder(View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.text_view_name);
             imageView = itemView.findViewById(R.id.image_view_upload);
+            ratingview=itemView.findViewById(R.id.rating);
+            description=itemView.findViewById(R.id.descript);
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
         }

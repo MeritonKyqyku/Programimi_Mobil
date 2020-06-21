@@ -26,8 +26,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/progress_bar"
-        android:layout_below="@id/edit_text_file_name"
-        android:layout_marginTop="16dp" />
+        android:layout_below="@id/photo_description"
+        android:layout_marginTop="2dp" />
+    <EditText
+        android:id="@+id/photo_description"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Write description or address"
+        android:layout_below="@+id/ratingBar"/>
     <ProgressBar
         android:id="@+id/progress_bar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
@@ -44,13 +50,22 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="Upload" />
-       <Spinner
+
+    <Spinner
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50sp"
+        android:paddingBottom="20dp"
+        android:layout_alignParentBottom="true"
         android:entries="@array/category_arrays"
         android:prompt="@string/categories" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="50dp"/>
+
 
 
 </RelativeLayout>

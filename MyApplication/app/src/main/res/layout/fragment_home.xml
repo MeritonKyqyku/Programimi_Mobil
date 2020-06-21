@@ -81,6 +81,7 @@
                         android:layout_margin="10dp">
 
                         <ImageView
+                            android:id="@+id/resIcon"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/restaurants"
@@ -109,6 +110,7 @@
                         android:layout_margin="10dp">
 
                         <ImageView
+                            android:id="@+id/cafIcon"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/cafes"
@@ -130,6 +132,7 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/banIcon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="@drawable/box3"
@@ -158,6 +161,7 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/eduIcon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:background="@drawable/box4"
@@ -193,6 +197,7 @@
                         android:layout_margin="10dp">
 
                         <ImageView
+                            android:id="@+id/phaIcon"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
                             android:src="@drawable/pharmacies"
@@ -221,6 +226,7 @@
                          android:layout_margin="10dp">
 
                          <ImageView
+                             android:id="@+id/hotIcon"
                              android:layout_width="30dp"
                              android:layout_height="30dp"
                              android:src="@drawable/hotels"

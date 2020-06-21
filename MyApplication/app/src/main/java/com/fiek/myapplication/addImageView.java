@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -37,7 +39,8 @@ public class addImageView extends Activity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private Button mButtonChooseImage;
     private Button mButtonUpload;
-    private TextView mTextViewShowUploads;
+    private EditText mDesc;
+    private RatingBar ratingBar;
     private EditText mEditTextFileName;
     private ImageView mImageView;
     private ProgressBar mProgressBar;
@@ -60,6 +63,8 @@ public class addImageView extends Activity {
 
         mButtonChooseImage = findViewById(R.id.button_choose_image);
         mButtonUpload = findViewById(R.id.button_upload);
+        ratingBar=findViewById(R.id.ratingBar);
+        mDesc=(EditText) findViewById(R.id.photo_description);
 
         mEditTextFileName = findViewById(R.id.edit_text_file_name);
         mImageView = findViewById(R.id.image_view);
@@ -115,6 +120,7 @@ public class addImageView extends Activity {
     private void uploadFile() {
         final String folder=spinner1.getSelectedItem().toString();
 
+
         if (mImageUri != null) {
             StorageReference fileReference = mStorageRef.child(folder+"/"+System.currentTimeMillis()
                     + "." + getFileExtension(mImageUri));
@@ -129,11 +135,18 @@ public class addImageView extends Activity {
                                     mProgressBar.setProgress(0);
                                 }
                             }, 500);
-                            Toast.makeText(getApplicationContext(), "Upload successful", Toast.LENGTH_LONG).show();
-                            Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),
-                                    taskSnapshot.getStorage().getDownloadUrl().toString());
-                            String uploadId = mDatabaseRef.push().getKey();
-                            mDatabaseRef.child(folder+"/"+uploadId).setValue(upload);
+                            Task<Uri> task = taskSnapshot.getMetadata().getReference().getDownloadUrl();
+                            task.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    String photoLink = uri.toString();
+                                    Toast.makeText(getApplicationContext(), "Upload successful", Toast.LENGTH_LONG).show();
+                                    Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),photoLink,ratingBar.getNumStars(),mDesc.getText().toString());
+                                    String uploadId = mDatabaseRef.push().getKey();
+                                    mDatabaseRef.child(folder+"/"+uploadId).setValue(upload);
+                                }
+                            });
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

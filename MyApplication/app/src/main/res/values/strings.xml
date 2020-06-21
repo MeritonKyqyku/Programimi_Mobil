@@ -4,11 +4,12 @@
 
     <string name="categories">Categories</string>
     <string-array name="category_arrays">
-        <item>Coffe shop</item>
+        <item>Coffee</item>
         <item>Banks</item>
         <item>Education</item>
         <item>Restaurants</item>
         <item>Pharmacies</item>
+        <item>Hotels</item>
     </string-array>
 
     <string name="home">Home</string>

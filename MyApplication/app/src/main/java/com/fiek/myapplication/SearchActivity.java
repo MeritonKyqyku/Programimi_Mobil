@@ -81,6 +81,7 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
         });
 
 
+
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         navigationView.setItemIconTintList(null);
