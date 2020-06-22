@@ -39,13 +39,19 @@
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
 
             <ImageView
                 android:id="@+id/addImageView"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="160dp"
-                android:src="@drawable/addimage" />
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/addimage"
+
+                android:layout_marginRight="10dp" />
         </LinearLayout>
 
         <fragment
