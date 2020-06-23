@@ -8,13 +8,19 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
+import android.content.ContentValues;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
+import android.nfc.Tag;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,6 +40,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 import java.io.IOException;
 import java.util.List;
@@ -45,6 +52,7 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
     GoogleApiClient googleApiClient;
     Location lastLocation;
     Marker currentUserLocation;
+    final public String Tag =".SearchActivity";
 
 
     @Override
@@ -109,8 +117,8 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
                                 public void onClick(View v) {
                                     EditText addressField=(EditText) findViewById(R.id.location_search);
                                     String address=addressField.getText().toString();
-
-                                    List<Address> addressList = null;
+                                    new AddData().execute(address);
+                                     List<Address> addressList = null;
                                     MarkerOptions userMarkerOptions =new MarkerOptions();
 
                                     if (!TextUtils.isEmpty(address)){
@@ -145,6 +153,13 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
                                         Toast.makeText(getApplicationContext(),"Please write a name",Toast.LENGTH_SHORT).show();
                                     }
 
+                                }
+                            });
+                            findViewById(R.id.btnhistory).setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent = new Intent(getApplicationContext(), UsersActivity.class);
+                                    startActivity(intent);
                                 }
                             });
                         }
@@ -210,4 +225,52 @@ public class SearchActivity extends AppCompatActivity implements OnMapReadyCallb
 
 
     }
+    public class AddData extends AsyncTask<String,Void,String>{
+        @Override
+        protected String doInBackground(String... strings) {
+            ContentValues cv = new ContentValues();
+            cv.put(Perdoruesi.Emri,strings[0]);
+           String database=strings[0];
+            try {
+                SQLiteDatabase objDb = new Databaza(SearchActivity.this).getWritableDatabase();
+                try
+                {
+                    long retValue = objDb.insert(Databaza.Perdoruesit,null,cv);
+
+                }
+                catch (Exception ex)
+                {
+                    Log.e("except", ex.getMessage());
+                }
+                finally {
+                    objDb.close();
+                }
+            }
+            catch (Exception e){
+
+                e.printStackTrace();
+            }
+             return database;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            Toast.makeText(getApplicationContext(),String.valueOf(s),Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+
+
+    /**
+     * customizable toast
+     * @param message
+     */
+    private void toastMessage(String message){
+        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
+    }
+
+
+
 }

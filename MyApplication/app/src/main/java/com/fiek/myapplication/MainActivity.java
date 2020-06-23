@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
                                 user.setPassword(password);
                                 reff.setValue(user);
                                 Toast.makeText(getApplicationContext(), "User inserted", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                startActivity(intent);
                             }
 //
                         }
@@ -113,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                        if (Useri.equals(UsernameE)){
                            if (passi.equals(message)){
                                getHome();
+
                            }
                            else if (!passi.equals(message)){
                                Toast.makeText(getApplicationContext(),"Username or password is wrong",Toast.LENGTH_SHORT).show();
