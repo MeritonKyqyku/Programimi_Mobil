@@ -26,6 +26,8 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".addImageView" />
+        <activity android:name=".About">
+        </activity>
         <activity android:name=".UsersActivity"/>
         <activity android:name=".SearchActivity"/>
         <activity android:name=".RegistrationUser" />
@@ -37,6 +39,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
+
 
         </activity>
     </application>

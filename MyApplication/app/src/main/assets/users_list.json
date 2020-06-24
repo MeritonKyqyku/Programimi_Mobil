@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "1087",
+      "name": "Meriton Kyqyku",
+      "email": "kyqykumeriton@gmail.com",
+      "gender" : "male",
+      "contact": {
+        "mobile": "Kaqanik",
+        "home": "00 000000",
+        "office": "00 000000"
+      }
+    },
+    {
+      "id": "1088",
+      "name": "Fitore Halimi",
+      "email": "fitorehalimi2@gmail.com",
+      "gender" : "Female",
+      "contact": {
+        "mobile": "Prizren",
+        "home": "00 000000",
+        "office": "00 000000"
+      }
+    }
+  ]
+}

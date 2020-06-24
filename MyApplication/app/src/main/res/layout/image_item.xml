@@ -36,6 +36,11 @@
             android:layout_marginTop="5dp"
             android:textSize="15dp"
             android:text="Vatrat Shqiptare 25, Prizren Kosovo"/>
+        <TextView
+            android:id="@+id/deepinfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"/>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -44,9 +44,17 @@ public class Home extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(getApplicationContext(), SearchActivity. class);
                         startActivity(intent);
+                    }
+                });
+                findViewById(R.id.nav_AboutUs).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), About. class);
+                        startActivity(intent);
 
                     }
                 });
+
 
 
 
