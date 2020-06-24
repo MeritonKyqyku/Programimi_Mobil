@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -21,11 +22,12 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Bundle b = getIntent().getExtras();
+        final String id = b.getString("id");
 
         final DrawerLayout drawerLayout = findViewById(R.id.layout_of_drawer);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setItemIconTintList(null);
-
         NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
         NavigationUI.setupWithNavController(navigationView, navController);
         findViewById(R.id.menu_icon).setOnClickListener(new View.OnClickListener() {
@@ -52,6 +54,14 @@ public class Home extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), About. class);
                         startActivity(intent);
 
+                    }
+                });
+                findViewById(R.id.nav_profile).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(getApplicationContext(),Profile.class);
+                        intent.putExtra("idja",id);
+                        startActivity(intent);
                     }
                 });
 

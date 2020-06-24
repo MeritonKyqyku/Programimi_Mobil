@@ -56,12 +56,14 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.ImageViewHol
         public ImageView imageView;
         public RatingBar ratingview;
         public TextView description;
+        public TextView deepDesc;
         public ImageViewHolder(View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.text_view_name);
             imageView = itemView.findViewById(R.id.image_view_upload);
             ratingview=itemView.findViewById(R.id.rating);
             description=itemView.findViewById(R.id.descript);
+            deepDesc=itemView.findViewById(R.id.deepinfo);
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
         }
@@ -82,6 +84,7 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.ImageViewHol
             doWhatever.setOnMenuItemClickListener(this);
             delete.setOnMenuItemClickListener(this);
         }
+
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             if (mListener != null) {

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -25,7 +26,7 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class RestaurantsFragment extends Fragment {
+public class RestaurantsFragment extends Fragment implements imageAdapter.OnItemClickListener {
     private RecyclerView mRecyclerView;
     private imageAdapter mAdapter;
     private ProgressBar mProgressCircle;
@@ -76,4 +77,18 @@ public class RestaurantsFragment extends Fragment {
 
     }
 
+    @Override
+    public void onItemClick(int position) {
+
+    }
+
+    @Override
+    public void onWhatEverClick(int position) {
+
+    }
+
+    @Override
+    public void onDeleteClick(int position) {
+
+    }
 }

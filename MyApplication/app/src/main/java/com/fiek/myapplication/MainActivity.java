@@ -93,10 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
-    public void getHome(){
-        Intent intent = new Intent(this,Home.class);
-        startActivity(intent);
-    }
     public void clickToLogin(View view) {
         Lusername = (EditText) findViewById(R.id.Login_username);
         final String Useri = Lusername.getText().toString().trim();
@@ -114,7 +110,9 @@ public class MainActivity extends AppCompatActivity {
                        String message = (String) messageSnapshot.child("password").getValue();
                        if (Useri.equals(UsernameE)){
                            if (passi.equals(message)){
-                               getHome();
+                               Intent intent = new Intent(getApplicationContext(),Home.class);
+                               intent.putExtra("id",UsernameE);
+                               startActivity(intent);
 
                            }
                            else if (!passi.equals(message)){

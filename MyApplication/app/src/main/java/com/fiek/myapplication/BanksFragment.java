@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -18,6 +19,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +29,12 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BanksFragment extends Fragment {
+public class BanksFragment extends Fragment implements imageAdapter.OnItemClickListener {
     private RecyclerView mRecyclerView;
     private imageAdapter mAdapter;
     private ProgressBar mProgressCircle;
     private DatabaseReference mDatabaseRef;
+    private FirebaseStorage mStorage;
     private List<Upload> mUploads;
 
     public BanksFragment() {
@@ -80,6 +84,25 @@ public class BanksFragment extends Fragment {
                 mProgressCircle.setVisibility(View.INVISIBLE);
             }
         });
+
+    }
+
+    @Override
+    public void onItemClick(int position) {
+
+
+    }
+
+    @Override
+    public void onWhatEverClick(int position) {
+        Upload selectedItem = mUploads.get(position);
+        final String selectedKey = selectedItem.getKey();
+        StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getImageUrl());
+        
+    }
+
+    @Override
+    public void onDeleteClick(int position) {
 
     }
 }

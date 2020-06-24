@@ -1,10 +1,13 @@
 package com.fiek.myapplication;
 
+import java.security.Key;
+
 public class Upload {
     private String mName;
     private int mRating;
     private String mDesc;
     private String mImageUrl;
+    private  String mKey;
 
     public Upload() {
         //empty constructor needed
@@ -51,5 +54,12 @@ public class Upload {
 
     public void setImageUrl(String imageUrl) {
         mImageUrl = imageUrl;
+    }
+
+    public String getKey() {
+        return mKey;
+    }
+    public void setkey(String key){
+        mKey=key;
     }
 }
