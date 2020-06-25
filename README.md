@@ -10,7 +10,7 @@ Fitore Halimi – fitorehalimi2@gmail.com
 ## Mentor
 Arbnor Halili
 ## E ndërtuar me / Built With
-•	OOP(Java), Material Design, Fragments, ListView, PageAdapter, CardView, Animations
+•	OOP(Java), Material Design, Fragments, ListView, PageAdapter, CardView, RecyclerView, Animations
 
 •	FireBase – Databaza
 
@@ -19,10 +19,13 @@ Arbnor Halili
 •	GMaps API – Lokacioni 
 ## Teknologjia e përdorur
 Firebase
+
 •	firebase-databse: 16.0.4
 
 •	firebase-storage: 16.0.4
+
 GMaps API
+
 •	play-services-maps:17.0.0
 
 •	play-services-location:17.0.0

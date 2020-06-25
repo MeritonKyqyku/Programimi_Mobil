@@ -72,7 +72,12 @@ public class MainActivity extends AppCompatActivity {
                 } else if (password.isEmpty()) {
                     Signup_password.setError("Password cannot be empty");
                     Signup_name.requestFocus();
-                } else if (!(name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty())) {
+                } else if (repassword.isEmpty()) {
+                    Retypepassword.setError("Please confirm your password...");
+                    Signup_name.requestFocus();
+                } else if (!password.equals(repassword)) {
+                    Toast.makeText(getApplicationContext(), "Password don't match", Toast.LENGTH_LONG).show();
+                } else if (!(name.isEmpty() || username.isEmpty() || email.isEmpty() || password.isEmpty() || repassword.isEmpty() )) {
                     reff = FirebaseDatabase.getInstance().getReference("User").child(Signup_username.getText().toString());
 
                     reff.addValueEventListener(new ValueEventListener() {

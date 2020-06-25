@@ -1,6 +1,8 @@
 package com.fiek.myapplication;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 
 public class About extends AppCompatActivity {
 
+    ImageView backbutton;
     // ArrayList for person names, email Id's and mobile numbers
     ArrayList<String> personNames = new ArrayList<>();
     ArrayList<String> emailIds = new ArrayList<>();
@@ -25,6 +28,14 @@ public class About extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
+
+        backbutton = findViewById(R.id.back_icon);
+
+        backbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                About.super.onBackPressed();
+            }});
         // get the reference of RecyclerView
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView1);
         // set a LinearLayoutManager with default vertical orientation
