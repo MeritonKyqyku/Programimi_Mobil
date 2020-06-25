@@ -61,10 +61,11 @@
             android:inputType="textPassword"
             android:hint="Password"
             android:textColor="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            />
+            android:textColorHint="@color/colorPrimaryDark" />
 
-       <Button
+
+
+        <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

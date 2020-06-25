@@ -35,198 +35,198 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="10dp">
-
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:padding="10dp">
 
-                    <RelativeLayout
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/box1"
-                        android:elevation="8dp"
-                        android:layout_margin="10dp">
-
-                        <ImageView
-                            android:id="@+id/resIcon"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/restaurants"
-                            android:layout_centerInParent="true"/>
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Restaurants"
-                        android:textAlignment="center"
-                        app:fontFamily="@font/caudex" />
-                </LinearLayout>
+                        android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/box1"
+                            android:elevation="8dp"
+                            android:layout_margin="10dp">
 
-                    <RelativeLayout
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/box2"
-                        android:elevation="8dp"
-                        android:layout_margin="10dp">
+                            <ImageView
+                                android:id="@+id/resIcon"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/restaurants"
+                                android:layout_centerInParent="true"/>
+                        </RelativeLayout>
 
-                        <ImageView
-                            android:id="@+id/cafIcon"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/cafes"
-                            android:layout_centerInParent="true"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="Restaurants"
+                            android:textAlignment="center"
+                            app:fontFamily="@font/caudex" />
+                    </LinearLayout>
 
-                    </RelativeLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cafes"
-                        android:textAlignment="center"
-                        android:gravity="center_horizontal"
-                        app:fontFamily="@font/caudex"/>
+                        android:orientation="vertical">
 
-                </LinearLayout>
+                        <RelativeLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/box2"
+                            android:elevation="8dp"
+                            android:layout_margin="10dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                            <ImageView
+                                android:id="@+id/cafIcon"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/cafes"
+                                android:layout_centerInParent="true"/>
 
-                    <RelativeLayout
-                        android:id="@+id/banIcon"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/box3"
-                        android:elevation="8dp"
-                        android:layout_margin="10dp">
+                        </RelativeLayout>
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/banks"
-                            android:layout_centerInParent="true"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cafes"
+                            android:textAlignment="center"
+                            android:gravity="center_horizontal"
+                            app:fontFamily="@font/caudex"/>
 
-                    </RelativeLayout>
+                    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Banks"
-                        android:textAlignment="center"
-                        android:gravity="center_horizontal"
-                        app:fontFamily="@font/caudex"/>
+                        android:orientation="vertical">
 
-                </LinearLayout>
+                        <RelativeLayout
+                            android:id="@+id/banIcon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/box3"
+                            android:elevation="8dp"
+                            android:layout_margin="10dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/banks"
+                                android:layout_centerInParent="true"/>
 
-                    <RelativeLayout
-                        android:id="@+id/eduIcon"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/box4"
-                        android:elevation="8dp"
-                        android:layout_margin="10dp">
+                        </RelativeLayout>
 
-                        <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/education"
-                            android:layout_centerInParent="true"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Banks"
+                            android:textAlignment="center"
+                            android:gravity="center_horizontal"
+                            app:fontFamily="@font/caudex"/>
 
-                    </RelativeLayout>
+                    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Education"
-                        android:textAlignment="center"
-                        android:gravity="center_horizontal"
-                        app:fontFamily="@font/caudex"/>
+                        android:orientation="vertical">
 
-                </LinearLayout>
+                        <RelativeLayout
+                            android:id="@+id/eduIcon"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/box4"
+                            android:elevation="8dp"
+                            android:layout_margin="10dp">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/education"
+                                android:layout_centerInParent="true"/>
 
-                    <RelativeLayout
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/box5"
-                        android:elevation="8dp"
-                        android:layout_margin="10dp">
+                        </RelativeLayout>
 
-                        <ImageView
-                            android:id="@+id/phaIcon"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/pharmacies"
-                            android:layout_centerInParent="true"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Education"
+                            android:textAlignment="center"
+                            android:gravity="center_horizontal"
+                            app:fontFamily="@font/caudex"/>
 
-                    </RelativeLayout>
+                    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pharmacies"
-                        android:textAlignment="center"
-                        android:gravity="center_horizontal"
-                        app:fontFamily="@font/caudex"/>
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/box5"
+                            android:elevation="8dp"
+                            android:layout_margin="10dp">
+
+                            <ImageView
+                                android:id="@+id/phaIcon"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/pharmacies"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Pharmacies"
+                            android:textAlignment="center"
+                            android:gravity="center_horizontal"
+                            app:fontFamily="@font/caudex"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/box6"
+                            android:elevation="8dp"
+                            android:layout_margin="10dp">
+
+                            <ImageView
+                                android:id="@+id/hotIcon"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@drawable/hotels"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Hotels"
+                            android:textAlignment="center"
+                            android:gravity="center_horizontal"
+                            app:fontFamily="@font/caudex"/>
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
-
-                 <LinearLayout
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:orientation="vertical">
-
-                     <RelativeLayout
-                         android:layout_width="60dp"
-                         android:layout_height="60dp"
-                         android:background="@drawable/box6"
-                         android:elevation="8dp"
-                         android:layout_margin="10dp">
-
-                         <ImageView
-                             android:id="@+id/hotIcon"
-                             android:layout_width="30dp"
-                             android:layout_height="30dp"
-                             android:src="@drawable/hotels"
-                             android:layout_centerInParent="true"/>
-
-                     </RelativeLayout>
-
-                     <TextView
-                         android:layout_width="match_parent"
-                         android:layout_height="wrap_content"
-                         android:text="Hotels"
-                         android:textAlignment="center"
-                         android:gravity="center_horizontal"
-                         app:fontFamily="@font/caudex"/>
-
-                 </LinearLayout>
-
-
-            </LinearLayout>
             </HorizontalScrollView>
             <LinearLayout
                 android:id="@+id/locations"

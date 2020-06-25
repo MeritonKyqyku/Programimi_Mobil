@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "13432522653-0kj46qbrt29qhaaspk2ebs13va84oilh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fiek.myapplication",
+            "certificate_hash": "841962bf2ba5252751db92b56f2fcdbd447b7338"
+          }
+        },
+        {
           "client_id": "13432522653-i304t03m9tn2u4pggiv8vk3s819p0sqi.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

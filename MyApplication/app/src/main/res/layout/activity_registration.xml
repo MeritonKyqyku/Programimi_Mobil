@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="170dp"
         android:id="@+id/header"
         android:orientation="vertical"
         android:background="@drawable/header">
@@ -22,7 +22,6 @@
             android:textSize="45dp"
             android:fontFamily="cursive"
             android:textColor="@android:color/white"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -31,7 +30,7 @@
         android:orientation="vertical"
         android:layout_below="@id/header"
         android:padding="15dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:gravity="center_horizontal">'
         <EditText
             android:id="@+id/Signup_Name"
@@ -39,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/app_logo"
             android:padding="18dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:textSize="18sp"
             android:textStyle="bold"
             android:inputType="text"
@@ -47,7 +46,6 @@
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             />
-
         <EditText
             android:id="@+id/Signup_username"
             android:layout_width="match_parent"
@@ -74,36 +72,30 @@
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             />
-
         <EditText
             android:id="@+id/Signup_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Signup_email"
             android:padding="18dp"
-            android:layout_marginTop="15dp"
             android:textSize="18sp"
             android:textStyle="bold"
             android:inputType="textPassword"
             android:hint="Password"
             android:textColor="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            />
+            android:textColorHint="@color/colorPrimaryDark"/>
         <EditText
             android:id="@+id/Retypepassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/Signup_password"
             android:padding="18dp"
-            android:layout_marginTop="15dp"
             android:textSize="18sp"
             android:textStyle="bold"
             android:inputType="textPassword"
             android:hint="Password"
             android:textColor="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            />
-
+            android:textColorHint="@color/colorPrimaryDark" />
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="match_parent"
@@ -117,13 +109,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal">
-    
+
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="115dp"
+            android:layout_marginTop="145dp"
             android:background="@drawable/login"/>
 
         '</LinearLayout>
