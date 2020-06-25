@@ -1,7 +1,10 @@
 package com.fiek.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,15 +22,26 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     EditText Signup_name,Signup_username,Signup_email,Signup_password,Retypepassword,Lusername,Lpassword;
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String Name = "nameKey";
+    public static final String Pass = "passKey";
+    SharedPreferences sharedPreferences;
     Button Signup,Login;
     DatabaseReference reff;
-    DatabaseReference reff1,reff2,reff3,reff4;
+    DatabaseReference reff2;
     User user;
     long MaxId=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences saved_values = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        String username=saved_values.getString("nameKey","");
+        String password=saved_values.getString("passKey","");
+        ((EditText) findViewById(R.id.Login_username)).setText(username);
+        ((EditText) findViewById(R.id.login_password)).setText(password);
+        //clickToLogin(findViewById(R.id.btnLogin));
+
     }
     public void clickToRegister(View view) {
         setContentView(R.layout.activity_registration);
@@ -100,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         final String passi = Lpassword.getText().toString().trim();
         Login = (Button) findViewById(R.id.btnLogin);
         reff2 = FirebaseDatabase.getInstance().getReference("User");
+        sharedPreferences=getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         reff2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -110,17 +125,28 @@ public class MainActivity extends AppCompatActivity {
                        String message = (String) messageSnapshot.child("password").getValue();
                        if (Useri.equals(UsernameE)){
                            if (passi.equals(message)){
+                               SharedPreferences.Editor editor = sharedPreferences.edit();
+                               editor.putString(Name, UsernameE);
+                               editor.putString(Pass, message);
+                               editor.apply();
                                Intent intent = new Intent(getApplicationContext(),Home.class);
                                intent.putExtra("id",UsernameE);
                                startActivity(intent);
-
                            }
                            else if (!passi.equals(message)){
-                               Toast.makeText(getApplicationContext(),"Username or password is wrong",Toast.LENGTH_SHORT).show();
+                               Toast.makeText(getApplicationContext(),"Password is wrong",Toast.LENGTH_SHORT).show();
                            }
                        }
+
                     }
                 }
+                else if (Useri.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Jepni te dhena",Toast.LENGTH_SHORT).show();
+
+                }else{
+                    Toast.makeText(getApplicationContext(),"Username or password is wrong",Toast.LENGTH_SHORT).show();
+                }
+
             }
 
             @Override
