@@ -54,10 +54,6 @@
                     android:id="@+id/nav_hotels"
                     android:title="Hotels"
                     android:icon="@drawable/hotels"/>
-                <item
-                    android:id="@+id/nav_more"
-                    android:title="More"
-                    android:icon="@drawable/more"/>
 
             </group>
         </menu>
