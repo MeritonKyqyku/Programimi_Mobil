@@ -3,9 +3,11 @@ package com.fiek.myapplication;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.ArrayAdapter;
@@ -53,6 +55,8 @@ public class addImageView extends Activity {
     private Button btnSubmit;
     private String Category ;
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +91,14 @@ public class addImageView extends Activity {
                 }
             }
         });
+        Button btnCamera=(Button)findViewById(R.id.btnCamera);
+        btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,0);
+            }
+        });
 
     }
 
@@ -106,12 +118,16 @@ public class addImageView extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
-                && data != null && data.getData() != null) {
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK) {
             mImageUri = data.getData();
             Picasso.get().load(mImageUri).into(mImageView);
         }
+        if (requestCode==0){
+            Bitmap bitmap = (Bitmap)data.getExtras().get("data");
+            mImageView.setImageBitmap(bitmap);
+        }
     }
+
     private String getFileExtension(Uri uri) {
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
