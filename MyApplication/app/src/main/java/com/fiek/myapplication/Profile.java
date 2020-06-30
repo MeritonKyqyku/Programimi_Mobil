@@ -45,6 +45,8 @@ public class Profile extends AppCompatActivity {
                             String P = (String) messageSnapshot.child("password").getValue();
                             String E=(String) messageSnapshot.child("name").getValue();
                             String N = (String) messageSnapshot.child("emailadd").getValue();
+
+
                             ((TextView)findViewById(R.id.profileusername)).setText(U);
                             ((TextView)findViewById(R.id.profilename)).setText(N);
                             ((TextView)findViewById(R.id.profilepass)).setText(P);

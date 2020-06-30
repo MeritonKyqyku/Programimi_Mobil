@@ -13,14 +13,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 public class imageAdapter extends RecyclerView.Adapter<imageAdapter.ImageViewHolder> {
     private static final String TAG = "MyActivity";
     private Context mContext;
+    private FirebaseStorage mStorage;
     private List<Upload> mUploads;
     private OnItemClickListener mListener;
     public imageAdapter(Context context, List<Upload> uploads) {

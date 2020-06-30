@@ -1,6 +1,8 @@
 package com.fiek.myapplication;
 
 
+import android.content.ContentProviderClient;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +15,14 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,8 +37,8 @@ public class RestaurantsFragment extends Fragment implements imageAdapter.OnItem
     private ProgressBar mProgressCircle;
     private DatabaseReference mDatabaseRef;
     private List<Upload> mUploads;
-
-
+    private FirebaseStorage mStorage;
+    private ValueEventListener mDBListener;
     public RestaurantsFragment() {
         // Required empty public constructor
     }
@@ -48,25 +53,27 @@ public class RestaurantsFragment extends Fragment implements imageAdapter.OnItem
     @Override
     public void onStart() {
         super.onStart();
+        mRecyclerView = getView().findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mProgressCircle = getView().findViewById(R.id.progress_circle);
+        mUploads = new ArrayList<>();
+        mAdapter = new imageAdapter(getContext(), mUploads);
+        mRecyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(this);
+        mStorage = FirebaseStorage.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads/Restaurants");
-        mDatabaseRef.addValueEventListener(new ValueEventListener() {
+        mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                mRecyclerView =getView().findViewById(R.id.recycler_view);
-                mRecyclerView.setHasFixedSize(true);
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                mProgressCircle = getView().findViewById(R.id.progress_circle);
-                mUploads = new ArrayList<>();
+                mUploads.clear();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     Upload upload = postSnapshot.getValue(Upload.class);
-                    Toast.makeText(getContext(),upload.toString(),Toast.LENGTH_SHORT).show();
+                    upload.setkey(postSnapshot.getKey());
                     mUploads.add(upload);
                 }
-                mAdapter = new imageAdapter(getContext(), mUploads);
-                mRecyclerView.setAdapter(mAdapter);
-
+                mAdapter.notifyDataSetChanged();
                 mProgressCircle.setVisibility(View.INVISIBLE);
-
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
@@ -74,21 +81,35 @@ public class RestaurantsFragment extends Fragment implements imageAdapter.OnItem
                 mProgressCircle.setVisibility(View.INVISIBLE);
             }
         });
-
     }
-
     @Override
     public void onItemClick(int position) {
+        Upload selectedItem = mUploads.get(position);
+        final String selectedKey = selectedItem.getKey();
+        StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getImageUrl());
+   //    Toast.makeText(getContext(),selectedKey,Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getContext(),deepinfo.class);
+        intent.putExtra("keyid","Restaurants");
+        intent.putExtra("keyvalue",selectedKey.toString());
+        startActivity(intent);
 
     }
-
     @Override
     public void onWhatEverClick(int position) {
-
+        Toast.makeText(getContext(), "Whatever click at position: " + position, Toast.LENGTH_SHORT).show();
     }
-
     @Override
     public void onDeleteClick(int position) {
-
+        Upload selectedItem = mUploads.get(position);
+        final String selectedKey = selectedItem.getKey();
+        StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getImageUrl());
+        imageRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                mDatabaseRef.child(selectedKey).removeValue();
+                Toast.makeText(getContext(), "Item deleted", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 }
