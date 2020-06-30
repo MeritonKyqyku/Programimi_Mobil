@@ -27,13 +27,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="tesit"
-        android:textSize="40dp"/>
+        android:textSize="10dp"/>
     <TextView
         android:id="@+id/ratingu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="tesit"
-        android:textSize="40dp"/>
+        android:textSize="10dp"/>
 
 
 

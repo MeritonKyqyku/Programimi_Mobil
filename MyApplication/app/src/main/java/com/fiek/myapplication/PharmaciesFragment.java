@@ -63,7 +63,7 @@ public class PharmaciesFragment extends Fragment implements imageAdapter.OnItemC
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(this);
         mStorage = FirebaseStorage.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads/Coffee");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads/Pharmacies");
         mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -92,7 +92,7 @@ public class PharmaciesFragment extends Fragment implements imageAdapter.OnItemC
         StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getImageUrl());
         //    Toast.makeText(getContext(),selectedKey,Toast.LENGTH_LONG).show();
         Intent intent = new Intent(getContext(), deepinfo.class);
-        intent.putExtra("keyid", "Coffee");
+        intent.putExtra("keyid", "Pharmacies");
         intent.putExtra("keyvalue", selectedKey.toString());
         startActivity(intent);
 

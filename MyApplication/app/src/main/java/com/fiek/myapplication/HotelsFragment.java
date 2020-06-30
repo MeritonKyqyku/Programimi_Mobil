@@ -62,7 +62,7 @@ public class HotelsFragment extends Fragment implements imageAdapter.OnItemClick
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(this);
         mStorage = FirebaseStorage.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads/Coffee");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads/Hotels");
         mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -91,7 +91,7 @@ public class HotelsFragment extends Fragment implements imageAdapter.OnItemClick
         StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getImageUrl());
         //    Toast.makeText(getContext(),selectedKey,Toast.LENGTH_LONG).show();
         Intent intent = new Intent(getContext(), deepinfo.class);
-        intent.putExtra("keyid", "Coffee");
+        intent.putExtra("keyid", "Hotels");
         intent.putExtra("keyvalue", selectedKey.toString());
         startActivity(intent);
 

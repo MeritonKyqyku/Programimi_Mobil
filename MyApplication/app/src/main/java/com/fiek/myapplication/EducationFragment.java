@@ -62,7 +62,7 @@ public class EducationFragment extends Fragment implements imageAdapter.OnItemCl
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(this);
         mStorage = FirebaseStorage.getInstance();
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads/Restaurants");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads/Education");
         mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -90,7 +90,7 @@ public class EducationFragment extends Fragment implements imageAdapter.OnItemCl
         StorageReference imageRef = mStorage.getReferenceFromUrl(selectedItem.getImageUrl());
         //    Toast.makeText(getContext(),selectedKey,Toast.LENGTH_LONG).show();
         Intent intent = new Intent(getContext(),deepinfo.class);
-        intent.putExtra("keyid","Restaurants");
+        intent.putExtra("keyid","Education");
         intent.putExtra("keyvalue",selectedKey.toString());
         startActivity(intent);
 
