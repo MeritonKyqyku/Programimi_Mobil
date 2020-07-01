@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
-    public void clickToLogin(View view) {
+    public void clickToLogin(final View view) {
         Lusername = (EditText) findViewById(R.id.Login_username);
         final String Useri = Lusername.getText().toString().trim();
         Lpassword = (EditText) findViewById(R.id.login_password);
@@ -126,17 +128,36 @@ public class MainActivity extends AppCompatActivity {
                 if ((dataSnapshot.exists())) {
                     // Toast.makeText(getApplicationContext(),"qetu",Toast.LENGTH_LONG).show()
                     for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
-                       String UsernameE=(String) messageSnapshot.child("username").getValue();
-                       String message = (String) messageSnapshot.child("password").getValue();
+                       final String UsernameE=(String) messageSnapshot.child("username").getValue();
+                       final String message = (String) messageSnapshot.child("password").getValue();
                        if (Useri.equals(UsernameE)){
                            if (passi.equals(message)){
-                               SharedPreferences.Editor editor = sharedPreferences.edit();
-                               editor.putString(Name, UsernameE);
-                               editor.putString(Pass, message);
-                               editor.apply();
-                               Intent intent = new Intent(getApplicationContext(),Home.class);
-                               intent.putExtra("id",UsernameE);
-                               startActivity(intent);
+                               Snackbar snackbar = Snackbar
+                                       .make(view, "Save login info", Snackbar.LENGTH_LONG)
+                                       .setAction("Save", new View.OnClickListener() {
+                                           @Override
+                                           public void onClick(View view) {
+                                               SharedPreferences.Editor editor = sharedPreferences.edit();
+                                               editor.putString(Name, UsernameE);
+                                               editor.putString(Pass, message);
+                                               editor.apply();
+                                               Snackbar snackbar1 = Snackbar.make(view, "info is saved", Snackbar.LENGTH_LONG);
+                                               snackbar1.show();
+                                           }
+                                       });
+                               snackbar.show();
+                               new Handler().postDelayed(new Runnable() {
+                                   @Override
+                                   public void run() {
+                                       Intent intent = new Intent(getApplicationContext(),Home.class);
+                                       intent.putExtra("id",UsernameE);
+                                       startActivity(intent);
+
+                                   }
+
+                               }, 3000);
+
+
                            }
                            else if (!passi.equals(message)){
                                Toast.makeText(getApplicationContext(),"Password is wrong",Toast.LENGTH_SHORT).show();
