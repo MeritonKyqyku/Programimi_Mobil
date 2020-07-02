@@ -19,6 +19,7 @@ public class HomeFragment extends Fragment {
     private ImageView img1;
 
 
+
 LinearLayout locations;
 
     public HomeFragment() {
@@ -44,7 +45,6 @@ LinearLayout locations;
         getActivity().findViewById(R.id.resIcon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
         getActivity().findViewById(R.id.cafIcon).setOnClickListener(new View.OnClickListener() {
