@@ -49,7 +49,42 @@ public class RestaurantsFragment extends Fragment implements imageAdapter.OnItem
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_restaurants, container, false);
+
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mRecyclerView = getView().findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mProgressCircle = getView().findViewById(R.id.progress_circle);
+        mUploads = new ArrayList<>();
+        mAdapter = new imageAdapter(getContext(), mUploads);
+        mRecyclerView.setAdapter(mAdapter);
+        mAdapter.setOnItemClickListener(this);
+        mStorage = FirebaseStorage.getInstance();
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads/Restaurants");
+        mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                mUploads.clear();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Upload upload = postSnapshot.getValue(Upload.class);
+                    upload.setkey(postSnapshot.getKey());
+                    mUploads.add(upload);
+                }
+                mAdapter.notifyDataSetChanged();
+                mProgressCircle.setVisibility(View.INVISIBLE);
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                mProgressCircle.setVisibility(View.INVISIBLE);
+            }
+        });
+    }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -82,6 +117,7 @@ public class RestaurantsFragment extends Fragment implements imageAdapter.OnItem
             }
         });
     }
+
     @Override
     public void onItemClick(int position) {
         Upload selectedItem = mUploads.get(position);

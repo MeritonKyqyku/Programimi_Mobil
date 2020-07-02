@@ -2,6 +2,7 @@ package com.fiek.myapplication;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -122,8 +123,12 @@ public class addImageView extends Activity {
             mImageUri = data.getData();
             Picasso.get().load(mImageUri).into(mImageView);
         }
-        if (requestCode==0){
+        else if (requestCode==0){
             Bitmap bitmap = (Bitmap)data.getExtras().get("data");
+//            ContentValues contentValues=new ContentValues();
+//            contentValues.put(MediaStore.Images.Media.TITLE,"from Phone");
+//            contentValues.put(MediaStore.Images.Media.DESCRIPTION,"casual photo");
+//            mImageUri= getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,contentValues);
             mImageView.setImageBitmap(bitmap);
         }
     }
@@ -157,7 +162,7 @@ public class addImageView extends Activity {
                                 public void onSuccess(Uri uri) {
                                     String photoLink = uri.toString();
                                     Toast.makeText(getApplicationContext(), "Upload successful", Toast.LENGTH_LONG).show();
-                                    Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),photoLink,ratingBar.getNumStars(),mDesc.getText().toString());
+                                    Upload upload = new Upload(mEditTextFileName.getText().toString().trim(),photoLink,Math.round(ratingBar.getRating()),mDesc.getText().toString());
                                     String uploadId = mDatabaseRef.push().getKey();
                                     mDatabaseRef.child(folder+"/"+uploadId).setValue(upload);
                                 }

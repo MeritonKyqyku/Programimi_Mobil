@@ -44,7 +44,7 @@ LinearLayout locations;
         getActivity().findViewById(R.id.resIcon).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().setContentView(R.layout.fragment_restaurants);
+
             }
         });
         getActivity().findViewById(R.id.cafIcon).setOnClickListener(new View.OnClickListener() {

@@ -40,7 +40,7 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.ImageViewHol
     public void onBindViewHolder(ImageViewHolder holder, int position) {
         Upload uploadCurrent = mUploads.get(position);
         holder.textViewName.setText(uploadCurrent.getName());
-        holder.ratingview.setNumStars(uploadCurrent.getmRating());
+        holder.ratingview.setRating(uploadCurrent.getmRating());
         holder.description.setText(uploadCurrent.getmDesc());
 
         Picasso.get().load(uploadCurrent.getImageUrl())

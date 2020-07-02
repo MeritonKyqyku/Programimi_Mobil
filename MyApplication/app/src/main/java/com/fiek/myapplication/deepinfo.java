@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -54,7 +55,7 @@ public class deepinfo extends AppCompatActivity {
                         .into((ImageView)findViewById(com.fiek.myapplication.R.id.pamja));
                 ((TextView)findViewById(com.fiek.myapplication.R.id.emriivendi)).setText(N);
                 ((TextView)findViewById(com.fiek.myapplication.R.id.pershkrimithell)).setText(P);
-                ((TextView)findViewById(com.fiek.myapplication.R.id.ratingu)).setText(R);
+                ((RatingBar)findViewById(com.fiek.myapplication.R.id.rtb)).setRating(Integer.parseInt(R));
 
                 }
 
