@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".deepinfo">
+    tools:context=".deepinfo"
+    android:padding="10dp">
     <ImageView
         android:id="@+id/pamja"
         android:src="@mipmap/ic_launcher"
@@ -25,11 +26,13 @@
     </LinearLayout>
     <TextView
         android:id="@+id/emriivendi"
+        android:fontFamily="@font/caudex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="tesit"
         android:textSize="40dp" />
         <TextView
+        android:fontFamily="@font/caudex"
         android:id="@+id/pershkrimithell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_toEndOf="@+id/button_choose_image"
-        android:hint="Enter file name              "
+        android:hint="Enter file name          "
         android:layout_marginTop="5dp"
         android:layout_marginLeft="16dp"
         android:layout_toRightOf="@+id/button_choose_image" />
@@ -34,6 +34,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnCamera"
         android:text="Cam"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@color/color2"
+        android:textColor="@android:color/white"
         android:layout_toRightOf="@id/edit_text_file_name"/>
     <ImageView
         android:id="@+id/image_view"
