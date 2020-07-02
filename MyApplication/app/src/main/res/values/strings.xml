@@ -16,13 +16,28 @@
     <string name="cafe"><br>Shadërvan\n</br><br>Prizren, 20000</br> </string>
     <string name="marashi"><br>Vatrat Shqiptare 25\n</br><br>Prizren, 20000</br></string>
     <string name="gatsby"><br>Gatsby\n</br><br>Cafe</br> </string>
-    <string name="gjimnazi"><br>Gjimnazi\n</br><br>Gjon Buzuku</br> </string>
+    <string name="gjimnazi"><br>Gymnasium\n</br><br>Gjon Buzuku</br> </string>
     <string name="gjimnazil">Lekë Matrënga <br>Prizren, 20000 </br> </string>
     <string name="jara"><br>Rruga e Jonit\n</br><br>Prizren, 20000</br> </string>
     <string name="prizren"> Prizren is a city and municipality located in the Prizren District of Kosovo.
         According to the 2011 census, the city of Prizren has 85,119 inhabitants, while the municipality has 177,781 inhabitants.
         Prizren is a historic city located on the banks of the Prizren Bistrica river, and on the slopes of the Šar Mountains
         in the southern part of Kosovo. The municipality has a border with Albania and North Macedonia. </string>
+
+    <string name="marashi1"><br>Vatrat Shqiptare 25-Prizren, 20000\n</br><br>Good restaurant with nice views over the river.</br>
+   It\'s placed next to the river and among trees and it has a garden in front as well with beautiful flowers and rich in color. Inside it has a very modern and cozy atmosphere. Just by that it\'s worth a visit. Well worth a visit!</string>
+    <string name="gatsby1"><br>Shadërvan Prizren, 20000\n</br><br>Excellent atmosphere, great food and the service is just perfect. Large windows or large openings in the facade, follow natural light, perform two-way ventilation and create a splendid view over the Lumbardh River, the Castle and beyond the fabulous Sharr mountains.Such a kind and pleasant staff. You should definitely try it!</br></string>
+
+    <string name="hotel"><br>Theranda Hotel is located in the center of the ancient city of Prizren\n</br><br>Hotel offers accommodation with elegant rooms, meeting facilities for meetings and workshops and restaurant with terrace surrounded by the most beautiful view of the city. Capacity: Our hotel has 96 rooms in total which of them:Suites (with Jacuzzi), double rooms (with separate beds), double rooms (king size bed), single rooms, triple rooms, rooms for four and five persons .</br></string>
+
+    <string name="banks"><br>Shaip Spahiu, Shadervan\n</br><br>Banka Ekonomike was licensed in 2001 when it also started operating as the only 100 percent local bank.
+Being the only fully owned local capital bank, our mission took on an even more important dimension because through providing a higher level service, we would like to give an example that this could also be achieved by an established financial institution entirely from the country.</br></string>
+
+    <string name="gjimnazi2"><br>Lekë Matrënga Prizren, 20000\n</br><br>The school can be separated into three education fields:\n</br><br>General fields\n</br><br>Natural sciences\n</br><br>Mathematics and computing science.</br></string>
+
+    <string name="jara1"><br>Rruga e Jonit Prizren, 20000\n</br><br>Jara Pharmacy is a pharmacy with a new concept of presentation.
+Where at first glance, it can be seen that orthopedic and cosmetic products have been given a special and easily accessible space by customers.
+The part of pharmaceutical products is located in the part dedicated to them and conforms to pharmaceutical rules.</br> </string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
