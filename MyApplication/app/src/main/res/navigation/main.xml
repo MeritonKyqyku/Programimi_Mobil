@@ -45,9 +45,4 @@
         android:name="com.fiek.myapplication.PharmaciesFragment"
         android:label="fragment_pharmacies"
         tools:layout="@layout/fragment_pharmacies" />
-    <fragment
-        android:id="@+id/nav_more"
-        android:name="com.fiek.myapplication.MoreFragment"
-        android:label="fragment_more"
-        tools:layout="@layout/fragment_more" />
 </navigation>
