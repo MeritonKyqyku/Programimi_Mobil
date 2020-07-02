@@ -77,6 +77,12 @@ LinearLayout locations;
                 getActivity().setContentView(R.layout.fragment_banks);
             }
         });
+        getActivity().findViewById(R.id.foto1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().setContentView(R.layout.feed);
+            }
+        });
 
 
     }
