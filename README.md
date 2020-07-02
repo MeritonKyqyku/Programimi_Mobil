@@ -30,4 +30,8 @@ GMaps API
 
 •	play-services-location:17.0.0
 ## Screenshots
+
+<img src="screenshots/register.jpg" height="300"> <img src="screenshots/login.jpg" height="300"> <img src="screenshots/foto1.jpg" height="300"> <img src="screenshots/home.jpg" height="300"> <img src="screenshots/foto5.jpg" height="300">
+
+<img src="screenshots/foto6.jpg" height="300"> <img src="screenshots/foto2.jpg" height="300"> <img src="screenshots/foto3.jpg" height="300"> <img src="screenshots/foto4.jpg" height="300"> 
 ## Demo
