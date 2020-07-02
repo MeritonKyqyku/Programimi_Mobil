@@ -42,47 +42,43 @@ LinearLayout locations;
     @Override
     public void onStart() {
         super.onStart();
-        getActivity().findViewById(R.id.resIcon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
-        getActivity().findViewById(R.id.cafIcon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().setContentView(R.layout.fragment_cafes);
-            }
-        });
-        getActivity().findViewById(R.id.eduIcon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().setContentView(R.layout.fragment_education);
-            }
-        });
-        getActivity().findViewById(R.id.hotIcon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().setContentView(R.layout.fragment_hotels);
-            }
-        });
-        getActivity().findViewById(R.id.phaIcon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().setContentView(R.layout.fragment_pharmacies);
-            }
-        });
-        getActivity().findViewById(R.id.banIcon).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().setContentView(R.layout.fragment_banks);
-            }
-        });
         getActivity().findViewById(R.id.foto1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().setContentView(R.layout.feed);
+                getActivity().setContentView(R.layout.restaurant_marashi);
             }
         });
+        getActivity().findViewById(R.id.foto2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().setContentView(R.layout.gatsbycafe);
+            }
+        });
+        getActivity().findViewById(R.id.foto3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().setContentView(R.layout.theranda);
+            }
+        });
+        getActivity().findViewById(R.id.foto4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().setContentView(R.layout.banka);
+            }
+        });
+        getActivity().findViewById(R.id.foto5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().setContentView(R.layout.gjimnazi);
+            }
+        });
+        getActivity().findViewById(R.id.foto6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().setContentView(R.layout.pharmacy);
+            }
+        });
+
 
 
     }
